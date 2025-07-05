@@ -12,7 +12,7 @@ Public Class DatabaseHelper
             Dim parameters As New List(Of SqlParameter) From {
                 New SqlParameter("@Nombre", cliente.Nombre),
                 New SqlParameter("@Apellidos", cliente.Apellidos),
-                New SqlParameter("@Cargo", cliente.Email),
+                New SqlParameter("@Email", cliente.Email),
                 New SqlParameter("@Telefono", cliente.Telefono)
             }
             Using connection As New SqlConnection(connectionString)
@@ -54,7 +54,7 @@ Public Class DatabaseHelper
         End Try
     End Function
 
-    Public Function ActualizarEmpleado(id As Integer, cliente As Cliente) As String
+    Public Function ActualizarCliente(id As Integer, cliente As Cliente) As String
         Try
             Dim query As String = "UPDATE CLIENTES SET Nombre = @Nombre, Apellidos = @Apellidos, Email = @Email, Telefono = @Telefono WHERE ClienteId = @id"
             Dim parameters As New List(Of SqlParameter) From {
@@ -78,7 +78,7 @@ Public Class DatabaseHelper
     End Function
 
 
-    Public Function CargarEmpleados() As DataTable
+    Public Function CargarClientes() As DataTable
         Dim dt As New DataTable()
         Try
             Dim query As String = "SELECT ClienteId, Nombre, Apellidos, Email, Telefono FROM CLIENTES"
