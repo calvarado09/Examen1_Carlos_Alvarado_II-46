@@ -26,9 +26,6 @@
                 <label for="txtTelefono">Número de telefono: </label>
                 <asp:TextBox TextMode="Phone" ID="txtTelefono" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
-
-
-
         </div>
     </div>
 
@@ -61,8 +58,5 @@
         </Columns>
     </asp:GridView>
 
-
     <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Conexion_Clientes %>" SelectCommand="SELECT * FROM [CLIENTES]"></asp:SqlDataSource>
-
-
 </asp:Content>
