@@ -77,22 +77,4 @@ Public Class DatabaseHelper
         End Try
     End Function
 
-
-    Public Function CargarClientes() As DataTable
-        Dim dt As New DataTable()
-        Try
-            Dim query As String = "SELECT ClienteId, Nombre, Apellidos, Email, Telefono FROM CLIENTES"
-            Using connection As New SqlConnection(connectionString)
-                Using command As New SqlCommand(query, connection)
-                    connection.Open()
-                    Using reader As SqlDataReader = command.ExecuteReader()
-                        dt.Load(reader)
-                    End Using
-                End Using
-            End Using
-        Catch ex As Exception
-            Throw New Exception("Error al obtener los cliente: " & ex.Message)
-        End Try
-        Return dt
-    End Function
 End Class

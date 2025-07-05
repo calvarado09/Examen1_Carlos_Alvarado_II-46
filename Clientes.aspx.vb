@@ -71,10 +71,12 @@ Public Class Clientes
             ' Insertar nuevo cliente
             Dim resultado As String = dbHelper.AgregarCliente(cliente) 'Llama al método AgregarCliente del DatabaseHelper para agregar un nuevo cliente
             lblMensaje.Text = resultado 'Muestra el resultado de la operación en una etiqueta de mensaje
+            lblMensaje.Text = ""
         Else 'Si en el campo IdCliente hay un valor, significa que se está actualizando un cliente existente
             Dim resultado As String = dbHelper.ActualizarCliente(IdCliente.Value, cliente) 'Llama al método ActualizarCliente del DatabaseHelper para actualizar el cliente existente
             lblMensaje.Text = resultado 'Muestra el resultado de la operación en una etiqueta de mensaje
             IdCliente.Value = "" 'Limpia el campo IdCliente después de la actualización
+
         End If
         LimpiarCampos() 'LLama al metodo Limpiar Campos
         Gv_Clientes.DataBind() 'Vuelve a enlazar el GridView para reflejar los cambios
