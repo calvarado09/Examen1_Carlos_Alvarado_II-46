@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Clientes.aspx.vb" Inherits="Examen1_Carlos_Alvarado_II_46.Clientes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <asp:HiddenField ID="IdCliente" runat="server" />
     <div class="row mb-3">
         <div class="col-md-4">
 
@@ -44,26 +44,6 @@
     <div>
         <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <asp:GridView ID="Gv_Clientes" runat="server" AllowPaging="true"
         OnSelectedIndexChanged="Gv_Clientes_SelectedIndexChanged"
