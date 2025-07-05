@@ -12,4 +12,12 @@
     Protected Sub Gv_Clientes_RowDeleting(sender As Object, e As GridViewDeleteEventArgs)
 
     End Sub
+
+    Protected Sub btnAgregar_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
