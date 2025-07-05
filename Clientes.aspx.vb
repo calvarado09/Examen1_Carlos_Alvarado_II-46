@@ -58,6 +58,11 @@ Public Class Clientes
             Exit Sub ' Sale del método si hay campos vacíos
         End If
 
+        If Not IsNumeric(txtTelefono.Text) Then ' Verifica si el campo de teléfono contiene solo números
+            lblMensaje.Text = "Ingrese solo números en el teléfono." ' Muestra un mensaje de error si el teléfono no es numérico
+            Exit Sub ' Sale del método si el teléfono no es numérico
+        End If
+
         ' Crea un objeto cliente con los valores del formulario
         Dim cliente As New Cliente() With {
             .Nombre = TxtNombre.Text.Trim(), ' Elimina espacios en blanco al inicio y al final del nombre y asigna el valor al objeto cliente
